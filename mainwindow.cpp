@@ -29,6 +29,9 @@ MainWindow::MainWindow(QWidget *parent)
     //sets the ui's tab page to the first page of the tab
     ui->tabWidget->setCurrentIndex(0);
 
+    //Makes the wages table text not editable
+    ui->wagesTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
     //this connection connects the tab index to onTabChanged to create a tab animation.
     connect(ui->tabWidget, &QTabWidget::currentChanged,
             this, &MainWindow::onTabChanged);
@@ -88,6 +91,8 @@ void MainWindow::on_wagesAddButton_clicked()
     ui->wagesTable->setItem(row, 2, new QTableWidgetItem(dateEditDate.toString("yyyy-MM-dd")));
 }
 
+
+//wage delete selected button code
 void MainWindow::on_deleteWageButton_clicked()
 {
     // Which row is currently selected?
@@ -101,7 +106,7 @@ void MainWindow::on_deleteWageButton_clicked()
     ui->wagesTable->removeRow(row);
 }
 
-//Changes tab 3 size and animation for the Tables and Pie Chart
+//Changes tab 2 and 3 size and animation for the Tables and Pie Chart
 void MainWindow::onTabChanged(int index)
 {
     // Choose target size based on tab
@@ -110,7 +115,10 @@ void MainWindow::onTabChanged(int index)
 
     if (index == 2) {
         targetSize = QSize(1200, 800);   // expanded size
-    } else {
+    }
+    else if (index == 1) {
+        targetSize = QSize(730, 500);   // expanded size
+    }    else {
         targetSize = QSize(625, 500);    // compact size
     }
 

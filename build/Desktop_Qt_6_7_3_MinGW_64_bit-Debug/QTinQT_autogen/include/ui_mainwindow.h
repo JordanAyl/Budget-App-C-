@@ -203,7 +203,7 @@ public:
         dateWages->setStyleSheet(QString::fromUtf8("background-color: #FFFFFF;\n"
 "color: #1E1E1E;"));
         dateWages->setDateTime(QDateTime(QDate(2025, 1, 1), QTime(0, 0, 0)));
-        dateWages->setMaximumDateTime(QDateTime(QDate(9999, 12, 1), QTime(23, 59, 59)));
+        dateWages->setMaximumDateTime(QDateTime(QDate(9999, 12, 2), QTime(23, 59, 59)));
         dateWages->setCalendarPopup(true);
         label->raise();
         label_8->raise();
@@ -224,21 +224,23 @@ public:
         deleteExpenseButton->setGeometry(QRect(270, 360, 121, 41));
         deleteExpenseButton->setFont(font);
         tableWidget = new QTableWidget(expenseTab);
-        if (tableWidget->columnCount() < 3)
-            tableWidget->setColumnCount(3);
+        if (tableWidget->columnCount() < 4)
+            tableWidget->setColumnCount(4);
         QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
         tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem3);
         QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
         tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem4);
         QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
         tableWidget->setHorizontalHeaderItem(2, __qtablewidgetitem5);
+        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(3, __qtablewidgetitem6);
         tableWidget->setObjectName("tableWidget");
-        tableWidget->setGeometry(QRect(270, 40, 301, 311));
+        tableWidget->setGeometry(QRect(270, 40, 401, 301));
         tableWidget->setSelectionBehavior(QAbstractItemView::SelectionBehavior::SelectRows);
-        tableWidget->setColumnCount(3);
+        tableWidget->setColumnCount(4);
         wagesFrame_2 = new QFrame(expenseTab);
         wagesFrame_2->setObjectName("wagesFrame_2");
-        wagesFrame_2->setGeometry(QRect(10, 20, 591, 411));
+        wagesFrame_2->setGeometry(QRect(10, 20, 691, 411));
         wagesFrame_2->setStyleSheet(QString::fromUtf8("background-color: #FFFFFF;\n"
 "border-radius: 8px;\n"
 "border: 1px solid #D0D3D8;"));
@@ -335,12 +337,12 @@ public:
         tableBudget = new QTableWidget(frame);
         if (tableBudget->columnCount() < 3)
             tableBudget->setColumnCount(3);
-        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
-        tableBudget->setHorizontalHeaderItem(0, __qtablewidgetitem6);
         QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
-        tableBudget->setHorizontalHeaderItem(1, __qtablewidgetitem7);
+        tableBudget->setHorizontalHeaderItem(0, __qtablewidgetitem7);
         QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
-        tableBudget->setHorizontalHeaderItem(2, __qtablewidgetitem8);
+        tableBudget->setHorizontalHeaderItem(1, __qtablewidgetitem8);
+        QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
+        tableBudget->setHorizontalHeaderItem(2, __qtablewidgetitem9);
         tableBudget->setObjectName("tableBudget");
         tableBudget->setGeometry(QRect(20, 20, 521, 711));
         tableBudget->setStyleSheet(QString::fromUtf8("background-color: #ECEEF1;\n"
@@ -356,7 +358,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(2);
         deleteWageButton->setDefault(false);
 
 
@@ -383,9 +385,11 @@ public:
         QTableWidgetItem *___qtablewidgetitem3 = tableWidget->horizontalHeaderItem(0);
         ___qtablewidgetitem3->setText(QCoreApplication::translate("MainWindow", "Date", nullptr));
         QTableWidgetItem *___qtablewidgetitem4 = tableWidget->horizontalHeaderItem(1);
-        ___qtablewidgetitem4->setText(QCoreApplication::translate("MainWindow", "Time", nullptr));
+        ___qtablewidgetitem4->setText(QCoreApplication::translate("MainWindow", "Name", nullptr));
         QTableWidgetItem *___qtablewidgetitem5 = tableWidget->horizontalHeaderItem(2);
         ___qtablewidgetitem5->setText(QCoreApplication::translate("MainWindow", "Amount", nullptr));
+        QTableWidgetItem *___qtablewidgetitem6 = tableWidget->horizontalHeaderItem(3);
+        ___qtablewidgetitem6->setText(QCoreApplication::translate("MainWindow", "Categorie", nullptr));
         expensesAddButton_clicked->setText(QCoreApplication::translate("MainWindow", "ADD", nullptr));
         label_5->setText(QCoreApplication::translate("MainWindow", " Amount:", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "  Name:", nullptr));
@@ -399,12 +403,12 @@ public:
 
         dateEdit->setDisplayFormat(QCoreApplication::translate("MainWindow", "MM/dd/yyyy", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(expenseTab), QCoreApplication::translate("MainWindow", "Expenses", nullptr));
-        QTableWidgetItem *___qtablewidgetitem6 = tableBudget->horizontalHeaderItem(0);
-        ___qtablewidgetitem6->setText(QCoreApplication::translate("MainWindow", "Wages", nullptr));
-        QTableWidgetItem *___qtablewidgetitem7 = tableBudget->horizontalHeaderItem(1);
-        ___qtablewidgetitem7->setText(QCoreApplication::translate("MainWindow", "Expenses", nullptr));
-        QTableWidgetItem *___qtablewidgetitem8 = tableBudget->horizontalHeaderItem(2);
-        ___qtablewidgetitem8->setText(QCoreApplication::translate("MainWindow", "Left Over", nullptr));
+        QTableWidgetItem *___qtablewidgetitem7 = tableBudget->horizontalHeaderItem(0);
+        ___qtablewidgetitem7->setText(QCoreApplication::translate("MainWindow", "Wages", nullptr));
+        QTableWidgetItem *___qtablewidgetitem8 = tableBudget->horizontalHeaderItem(1);
+        ___qtablewidgetitem8->setText(QCoreApplication::translate("MainWindow", "Expenses", nullptr));
+        QTableWidgetItem *___qtablewidgetitem9 = tableBudget->horizontalHeaderItem(2);
+        ___qtablewidgetitem9->setText(QCoreApplication::translate("MainWindow", "Left Over", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(budgetTab), QCoreApplication::translate("MainWindow", "PieChart", nullptr));
     } // retranslateUi
 
