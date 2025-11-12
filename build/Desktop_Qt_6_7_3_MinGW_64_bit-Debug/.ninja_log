@@ -1,0 +1,15 @@
+# ninja log v6
+11	142	7846030191662751	QTinQT_autogen/timestamp	c5bdd9d7888697c2
+592	2306	7845995779055194	CMakeFiles/QTinQT.dir/main.cpp.obj	258207d78f5a1f7f
+11	142	7846030191662751	QTinQT_autogen/mocs_compilation.cpp	c5bdd9d7888697c2
+142	2353	7846030192976658	CMakeFiles/QTinQT.dir/mainwindow.cpp.obj	bc6f5ca72b1cf1e1
+11	142	7846030191662751	C:/Users/jorda/OneDrive/Desktop/QTTestProject/QTinQT/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/QTinQT_autogen/timestamp	c5bdd9d7888697c2
+588	2257	7845995779023997	CMakeFiles/QTinQT.dir/QTinQT_autogen/mocs_compilation.cpp.obj	8ec316e302cbc8d
+11	142	7846030191662751	C:/Users/jorda/OneDrive/Desktop/QTTestProject/QTinQT/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/QTinQT_autogen/mocs_compilation.cpp	c5bdd9d7888697c2
+2353	2554	7846030215079246	QTinQT.exe	fbde1369da263904
+5	626	7846036080385968	build.ninja	2e7136ca45f48d44
+492	588	7845995778951068	QTinQT_autogen/EWIEGA46WW/qrc_resources.cpp	9fa3a3a1a98f1416
+5	36	7845995772213484	CMakeFiles/clean.additional	baedbe210acaa455
+492	588	7845995778951068	C:/Users/jorda/OneDrive/Desktop/QTTestProject/QTinQT/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/QTinQT_autogen/EWIEGA46WW/qrc_resources.cpp	9fa3a3a1a98f1416
+598	2680	7845995779125106	CMakeFiles/QTinQT.dir/QTinQT_autogen/EWIEGA46WW/qrc_resources.cpp.obj	1169a10e36e06275
+36	48	7845995772521526	clean	577b940aee94fbd7

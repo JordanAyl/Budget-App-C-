@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1308</width>
+    <height>839</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/icons/images/pink_pig.png</normaloff>:/icons/images/pink_pig.png</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #ECEEF1;
+color: #1E1E1E;</string>
+   </property>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>1291</width>
+      <height>811</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTabWidget::pane {
+    border: none;
+}
+
+QTabBar::tab {
+    background: #F5F6F8;
+    color: #1E1E1E;
+    padding: 8px 16px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    margin-right: 2px;
+}
+
+QTabBar::tab:hover {
+    background: #E5E7EB;
+}
+
+QTabBar::tab:selected {
+    background: #D1D5DB;     /* Darker active tab */
+    color: #111827;
+    font-weight: 600;
+}</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="moneytab">
+     <attribute name="title">
+      <string>Wages</string>
+     </attribute>
+     <widget class="QTableWidget" name="tableWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>50</y>
+        <width>301</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+      </property>
+      <property name="gridStyle">
+       <enum>Qt::PenStyle::SolidLine</enum>
+      </property>
+      <column>
+       <property name="text">
+        <string>Date</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Name</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Amount</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>260</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Delete Selected</string>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QFrame" name="wagesFrame">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>591</width>
+        <height>291</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #FFFFFF;
+border-radius: 8px;
+border: 1px solid #D0D3D8;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>190</y>
+         <width>71</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #FFFFFF;
+    border: 1px solid #D0D3D8;
+    border-radius: 6px;
+    padding: 6px 14px;
+    color: #1E1E1E;
+}
+
+QPushButton:hover {
+    border: 1px solid #3B82F6;
+    background-color: #F0F7FF;
+}
+
+QPushButton:pressed {
+    background-color: #E0ECFF;
+}</string>
+       </property>
+       <property name="text">
+        <string>ADD</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>20</y>
+         <width>171</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+    border: none;
+    background: transparent;
+}</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Plain</enum>
+       </property>
+       <property name="text">
+        <string>  Monthly Pay:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>110</y>
+         <width>71</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string> Amount:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="txtFirstNum_3">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>70</y>
+         <width>151</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #ECEEF1;
+color: #1E1E1E;</string>
+       </property>
+       <property name="frame">
+        <bool>true</bool>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::EchoMode::Normal</enum>
+       </property>
+       <property name="clearButtonEnabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_5">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>110</y>
+         <width>151</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #ECEEF1;
+color: #1E1E1E;</string>
+       </property>
+       <property name="readOnly">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>70</y>
+         <width>71</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>  Name:</string>
+       </property>
+      </widget>
+      <widget class="QDateEdit" name="dateEdit_2">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>290</y>
+         <width>221</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #FFFFFF;
+color: #1E1E1E;</string>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QDateEdit" name="dateEdit_3">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>150</y>
+         <width>221</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #FFFFFF;
+color: #1E1E1E;</string>
+       </property>
+       <property name="dateTime">
+        <datetime>
+         <hour>0</hour>
+         <minute>0</minute>
+         <second>0</second>
+         <year>2025</year>
+         <month>1</month>
+         <day>1</day>
+        </datetime>
+       </property>
+       <property name="maximumDateTime">
+        <datetime>
+         <hour>23</hour>
+         <minute>59</minute>
+         <second>59</second>
+         <year>9999</year>
+         <month>11</month>
+         <day>30</day>
+        </datetime>
+       </property>
+       <property name="displayFormat">
+        <string>MM/dd/yyyy</string>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <zorder>label</zorder>
+      <zorder>label_8</zorder>
+      <zorder>txtFirstNum_3</zorder>
+      <zorder>lineEdit_5</zorder>
+      <zorder>label_9</zorder>
+      <zorder>pushButton_3</zorder>
+      <zorder>dateEdit_2</zorder>
+      <zorder>dateEdit_3</zorder>
+     </widget>
+     <zorder>wagesFrame</zorder>
+     <zorder>tableWidget_2</zorder>
+     <zorder>pushButton_4</zorder>
+    </widget>
+    <widget class="QWidget" name="expenseTab">
+     <attribute name="title">
+      <string>Expenses</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>360</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Delete Selected</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>40</y>
+        <width>301</width>
+        <height>311</height>
+       </rect>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+      </property>
+      <property name="columnCount">
+       <number>3</number>
+      </property>
+      <column>
+       <property name="text">
+        <string>Date</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Time</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Amount</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QFrame" name="wagesFrame_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>591</width>
+        <height>411</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #FFFFFF;
+border-radius: 8px;
+border: 1px solid #D0D3D8;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="pushButton">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>230</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #FFFFFF;
+    border: 1px solid #D0D3D8;
+    border-radius: 6px;
+    padding: 6px 14px;
+    color: #1E1E1E;
+}
+
+QPushButton:hover {
+    border: 1px solid #3B82F6;
+    background-color: #F0F7FF;
+}
+
+QPushButton:pressed {
+    background-color: #E0ECFF;
+}</string>
+       </property>
+       <property name="text">
+        <string>ADD</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_4">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>110</y>
+         <width>151</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #ECEEF1;
+color: #1E1E1E;</string>
+       </property>
+       <property name="readOnly">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>110</y>
+         <width>71</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string> Amount:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>70</y>
+         <width>71</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>  Name:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="txtFirstNum_2">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>70</y>
+         <width>151</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #ECEEF1;
+color: #1E1E1E;</string>
+       </property>
+       <property name="frame">
+        <bool>true</bool>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::EchoMode::Normal</enum>
+       </property>
+       <property name="clearButtonEnabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>20</y>
+         <width>221</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+    border: none;
+    background: transparent;
+}</string>
+       </property>
+       <property name="text">
+        <string>  Monthly Expenses:</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>190</y>
+         <width>221</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <item>
+        <property name="text">
+         <string>  Select Item</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>  Bills</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>  Fun</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>  Groceries</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>  Savings</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>  Subscriptions</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QDateEdit" name="dateEdit">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>150</y>
+         <width>221</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #FFFFFF;
+color: #1E1E1E;</string>
+       </property>
+       <property name="dateTime">
+        <datetime>
+         <hour>0</hour>
+         <minute>0</minute>
+         <second>0</second>
+         <year>2025</year>
+         <month>1</month>
+         <day>2</day>
+        </datetime>
+       </property>
+       <property name="displayFormat">
+        <string>MM/dd/yyyy</string>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <zorder>wagesFrame_2</zorder>
+     <zorder>pushButton_2</zorder>
+     <zorder>tableWidget</zorder>
+    </widget>
+    <widget class="QWidget" name="budgetTab">
+     <attribute name="title">
+      <string>PieChart</string>
+     </attribute>
+     <widget class="QFrame" name="frame">
+      <property name="geometry">
+       <rect>
+        <x>19</x>
+        <y>-1</y>
+        <width>1151</width>
+        <height>751</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #FFFFFF;
+border-radius: 8px;
+border: 1px solid #D0D3D8;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <widget class="QChartView" name="chartView" native="true">
+       <property name="geometry">
+        <rect>
+         <x>570</x>
+         <y>20</y>
+         <width>561</width>
+         <height>711</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 0px;
+border: 0px solid #D0D3D8;</string>
+       </property>
+      </widget>
+      <widget class="QTableWidget" name="tableBudget">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>521</width>
+         <height>711</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #ECEEF1;
+color: #1E1E1E;
+border-radius: 0px;
+border: 0px solid #D0D3D8;</string>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Sunken</enum>
+       </property>
+       <column>
+        <property name="text">
+         <string>Wages</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Expenses</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Left Over</string>
+        </property>
+       </column>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QChartView</class>
+   <extends>QWidget</extends>
+   <header>QtCharts/QChartView</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

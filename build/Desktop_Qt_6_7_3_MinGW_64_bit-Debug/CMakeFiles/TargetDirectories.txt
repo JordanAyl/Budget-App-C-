@@ -1,0 +1,5 @@
+C:/Users/jorda/OneDrive/Desktop/QTTestProject/QTinQT/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/CMakeFiles/QTinQT.dir
+C:/Users/jorda/OneDrive/Desktop/QTTestProject/QTinQT/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+C:/Users/jorda/OneDrive/Desktop/QTTestProject/QTinQT/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/jorda/OneDrive/Desktop/QTTestProject/QTinQT/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/CMakeFiles/QTinQT_autogen_timestamp_deps.dir
+C:/Users/jorda/OneDrive/Desktop/QTTestProject/QTinQT/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/CMakeFiles/QTinQT_autogen.dir
