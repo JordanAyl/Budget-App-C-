@@ -5,6 +5,7 @@ class BudgetManager
 {
 public:
     BudgetManager();
+    void  addExpense();
 };
 
 #endif // BUDGETMANAGER_H
