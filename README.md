@@ -13,6 +13,9 @@ A simple C++/Qt application for managing wages, expenses, and budget visualizati
 ```bash
 cmake -S . -B build
 cmake --build build
+```
 
 ## Run
-./build/BudgetApp
+```bash
+./build/HonoraryBudgetApp
+```
