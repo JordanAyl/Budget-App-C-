@@ -65,7 +65,7 @@ QTabBar::tab:selected {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="moneytab">
      <attribute name="title">
@@ -332,7 +332,7 @@ color: #1E1E1E;</string>
          <second>59</second>
          <year>9999</year>
          <month>12</month>
-         <day>11</day>
+         <day>19</day>
         </datetime>
        </property>
        <property name="displayFormat">
@@ -663,10 +663,10 @@ border: 1px solid #D0D3D8;</string>
       <widget class="QChartView" name="chartView" native="true">
        <property name="geometry">
         <rect>
-         <x>570</x>
-         <y>20</y>
-         <width>561</width>
-         <height>711</height>
+         <x>590</x>
+         <y>10</y>
+         <width>541</width>
+         <height>721</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -686,39 +686,82 @@ border: 1px solid #D0D3D8;</string>
 border: 0px solid #D0D3D8;</string>
        </property>
       </widget>
-      <widget class="QTableWidget" name="tableBudget">
+      <widget class="QTextEdit" name="summaryText">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>20</y>
-         <width>521</width>
-         <height>711</height>
+         <x>70</x>
+         <y>90</y>
+         <width>471</width>
+         <height>291</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <pointsize>24</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>30</y>
+         <width>331</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background-color: #ECEEF1;
-color: #1E1E1E;
-border-radius: 0px;
-border: 0px solid #D0D3D8;</string>
+        <string notr="true">QLabel {
+    border: none;
+    background: transparent;
+}</string>
        </property>
-       <property name="frameShadow">
-        <enum>QFrame::Shadow::Sunken</enum>
+       <property name="text">
+        <string>  Income/Expenses/Left Over:</string>
        </property>
-       <column>
-        <property name="text">
-         <string>Wages</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Expenses</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Left Over</string>
-        </property>
-       </column>
+      </widget>
+      <widget class="QPushButton" name="printStatementButton">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>400</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #FFFFFF;
+    border: 1px solid #D0D3D8;
+    border-radius: 6px;
+    padding: 6px 14px;
+    color: #1E1E1E;
+}
+
+QPushButton:hover {
+    border: 1px solid #3B82F6;
+    background-color: #F0F7FF;
+}
+
+QPushButton:pressed {
+    background-color: #E0ECFF;
+}</string>
+       </property>
+       <property name="text">
+        <string>ADD</string>
+       </property>
       </widget>
      </widget>
     </widget>

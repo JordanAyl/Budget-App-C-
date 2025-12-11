@@ -3,6 +3,7 @@
 #include <QString>
 #include <QDate>
 #include <QVector>
+#include <ostream>
 
 struct Income {
     QString name;
@@ -17,6 +18,20 @@ struct Expense {
     QString category;
 };
 
+inline std::ostream& operator<<(std::ostream &os, const Income &inc) {
+    os << " Name: " << inc.name.toStdString()
+       << ", Amount: "      << inc.amount
+       << ", Date: "        << inc.date.toString("MM/dd/yyyy").toStdString() << std::endl;
+    return os;
+}
+
+inline std::ostream& operator<<(std::ostream &os, const Expense &exp) {
+    os << " Name: " << exp.name.toStdString()
+       << ", Amount: "       << exp.amount
+       << ", Date: "         << exp.date.toString("MM/dd/yyyy").toStdString()
+       << ", Category: /n"     << exp.category.toStdString()<< std::endl;
+    return os;
+}
 
 class BudgetManager {
 public:
@@ -28,6 +43,7 @@ public:
 
     // remove items
     void removeIncomeAt(int index);
+    void removeExpenseAt(int index);
 
     // totals
     double totalIncome() const;
