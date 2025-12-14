@@ -1,7 +1,3 @@
-//
-// Created by jorda on 12/3/2025.
-//
-
 #ifndef HONORARYBUDGETAPP_CATEGORY_H
 #define HONORARYBUDGETAPP_CATEGORY_H
 

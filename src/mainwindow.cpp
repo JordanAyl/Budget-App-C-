@@ -1,5 +1,7 @@
 #include "../include/mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "../include/file.h"
+#include <QDebug>
 
 //includes for the Pie Chart
 #include <QtCharts/QChartView>
@@ -38,8 +40,9 @@ MainWindow::MainWindow(QWidget *parent)
     //wagesTable text not editable
     ui->wagesTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
+    ui->summaryText->setReadOnly(true);
     //resizes the tableBudgets columns to fit
-    ui->tableBudget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ////ui->tableBudget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
     ////////////////// Connections ///////////////////////////
 
@@ -95,13 +98,10 @@ void MainWindow::on_wagesAddButton_clicked()
     ui->wagesTable->setItem(row, 1, new QTableWidgetItem(text2));
     ui->wagesTable->setItem(row, 2, new QTableWidgetItem(dateEditDate.toString("yyyy-MM-dd")));
 
-
-    //Update the last-page wages summary table
-    appendIncomeToSummary(amount);
-
     //clear inputs after adding
     ui->wagesLine1->clear();
     ui->wagesLine2->clear();
+    refreshSummaryText();
 }
 
 //change from foo bar to connection
@@ -131,10 +131,12 @@ void MainWindow::on_expensesAddButton_clicked()
     ui->expenseTable->setItem(row, 2, new QTableWidgetItem(category));
     ui->expenseTable->setItem(row, 3, new QTableWidgetItem(dateEditDate.toString("yyyy-MM-dd")));
 
+    refreshSummaryText();
 
     //clear text from expense text line
     ui->expenseName->clear();
     ui->expenseAmount->clear();
+    refreshSummaryText();
 }
 
 //wage delete selected button code
@@ -150,8 +152,14 @@ void MainWindow::on_deleteWageButton_clicked()
     //remove row from wages table
     ui->wagesTable->removeRow(row);
 
-    //Rebuild the wages column in the final table
-    refreshSummaryWagesColumn();
+    refreshSummaryText();
+}
+
+void MainWindow::on_printStatementButton_clicked()
+{
+    File f;
+    QString leftover = QString::number(member_budget.netBalance(), 'f', 2);
+    f.printToFile(member_budget.getExpenses(), member_budget.getIncomes(), leftover);
 }
 
 //wage delete selected button code
@@ -163,8 +171,10 @@ void MainWindow::on_deleteExpenseButton_clicked()
     if (row < 0)
         return;
 
+    member_budget.removeExpenseAt(row);
     // Remove row
     ui->expenseTable->removeRow(row);
+    refreshSummaryText();
 }
 
 // Animates window size when the current tab changes
@@ -192,59 +202,14 @@ void MainWindow::onTabChanged(int index)
     anim->start(QAbstractAnimation::DeleteWhenStopped);
 }
 
-void MainWindow::appendIncomeToSummary(double amount)
+void MainWindow::refreshSummaryText()
 {
-    QTableWidget *table = ui->tableBudget;
 
-    // Make sure it has at least 3 columns: Wages, Expenses, Total Left Over
-    if (table->columnCount() < 3) {
-        table->setColumnCount(3);
-        QStringList headers;
-        headers << "Wages" << "Expenses" << "Total Left Over";
-        table->setHorizontalHeaderLabels(headers);
-    }
+    ui->summaryText->setPlainText("Total Income: "+QString::number(member_budget.totalIncome())
+                                    +"\n\nTotal Expenses: "+QString::number(member_budget.totalExpenses())+"\n"
+                                    +"\nTotal Left Over: "+QString::number(member_budget.netBalance()));
 
-    // New row at the bottom
-    int row = table->rowCount();
-    table->insertRow(row);
 
-    // Put the income amount in the Wages column (col 0), same column every time
-    auto *wagesItem = new QTableWidgetItem(QString::number(amount, 'f', 2));
-    table->setItem(row, 0, wagesItem);
-
-}
-
-void MainWindow::refreshSummaryWagesColumn()
-{
-    QTableWidget *table = ui->tableBudget;
-    const auto &incomes = member_budget.getIncomes();
-
-    // Make sure we have at least as many rows as incomes
-    if (table->rowCount() < incomes.size()) {
-        table->setRowCount(incomes.size());
-    }
-
-    int rowCount = table->rowCount();
-
-    // For each row:
-    // - if there's an income at that index, show its amount in col 0
-    // - otherwise clear the wages cell (but leave other columns alone)
-    for (int row = 0; row < rowCount; ++row) {
-
-        QTableWidgetItem *item = table->item(row, 0);
-        if (!item) {
-            item = new QTableWidgetItem();
-            table->setItem(row, 0, item);
-        }
-
-        if (row < incomes.size()) {
-            // There *is* an income for this row index
-            item->setText(QString::number(incomes[row].amount, 'f', 2));
-        } else {
-            // No income for this row index anymore → clear wages only
-            item->setText("");
-        }
-    }
 }
 
 MainWindow::~MainWindow()

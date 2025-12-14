@@ -9,7 +9,7 @@
 
 // no more 'std::'
 using namespace std;
-
+/*
 
 //-----I have begun this project with the consideration that we begin thinking from the approach that we start from the
 //inside and work our way out. We begin with the fundamental definition of how our program is holding the data most
@@ -100,3 +100,4 @@ int main() {
 //End of main()
 
 //Now that the compiler knows all of our user input data, we can move onto the other file stuff
+*/

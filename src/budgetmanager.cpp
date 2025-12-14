@@ -10,29 +10,29 @@ void BudgetManager::addIncome(const Income &income)
     member_incomes.push_back(income);
 }
 
-//Add expense to expense vector
 void BudgetManager::addExpense(const Expense &expense)
 {
     member_expenses.push_back(expense);
 }
 
-//Add income to income vector
+//Evelyns code switched too vector
 double BudgetManager::totalIncome() const
 {
-    double sum = 0.0;
+    double total = 0.0;
     for (const auto &income : member_incomes) {
-        sum += income.amount;
+        total += income.amount;
     }
-    return sum;
+    return total;
 }
 
+//Evelyns Code switched too vector
 double BudgetManager::totalExpenses() const
 {
-    double sum = 0.0;
+    double total = 0.0;
     for (const auto &expense : member_expenses) {
-        sum += expense.amount;
+        total += expense.amount;
     }
-    return sum;
+    return total;
 }
 
 double BudgetManager::netBalance() const
@@ -56,5 +56,12 @@ void BudgetManager::removeIncomeAt(int index)
 {
     if (index >= 0 && index < member_incomes.size()) {
         member_incomes.removeAt(index);
+    }
+}
+
+void BudgetManager::removeExpenseAt(int index)
+{
+    if (index >= 0 && index < member_expenses.size()) {
+        member_expenses.removeAt(index);
     }
 }

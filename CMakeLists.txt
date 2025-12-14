@@ -22,13 +22,13 @@ set(PROJECT_SOURCES
         ui/mainwindow.ui
         resources/resources.qrc
         src/mosesbudgetmanager.cpp
+        src/file.cpp
+        src/category.cpp
 )
 
 qt_add_executable(HonoraryBudgetApp
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        src/budgetmanager.cpp
-        include/file.h
 )
 
 set_target_properties(HonoraryBudgetApp PROPERTIES
