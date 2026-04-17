@@ -15,9 +15,6 @@ A desktop application for tracking and managing personal expenses.
 ## How It Works
 The application uses Qt's signal-slot mechanism to handle user interactions and maintain a responsive UI. Data is stored locally using file-based persistence, allowing users to retain their financial data across sessions.
 
-## Demo
-(Coming Soon)
-
 ## Requirements
 
 - Qt 6 with QtCharts
